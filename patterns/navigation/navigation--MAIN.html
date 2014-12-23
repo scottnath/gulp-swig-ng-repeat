@@ -1,0 +1,32 @@
+---
+something: thing
+levelOneNavObject:
+  mainItemOne:
+    title: main item one
+    url: google.com
+  mainItemTwo:
+    title: main item two
+    url: yahoo.com
+    levelTwoNavObject:
+      subItemOne:
+        title: sub item one
+        url: yahoo.com/1
+      subItemTwo:
+        title: sub item two
+        url: yahoo.com/2
+      subItemThree:
+        title: sub item three
+        url: yahoo.com/3
+  mainItemThree:
+    title: main item three
+    url: bing.com
+---
+<p>{{something}}</p>
+<p>{{levelOneNavObject.mainItemOne.title}}</p>
+<nav class="navigation--MAIN">
+  <ul class="navigation--primary">
+    <li class="navigation--primary-list-item" ng-repeat="mains in levelOneNavObject"><a href="http://{{mains.url}}">{{mains.title}}</a></li>
+  </ul>
+
+</nav>
+
